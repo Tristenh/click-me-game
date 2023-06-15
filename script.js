@@ -4,6 +4,7 @@ const form = document.getElementById("form");
 const input = document.getElementById("input");
 const submit = document.getElementById("submit");
 const score = document.getElementById("score");
+const result = document.getElementById("result");
 
 let count = 0;
 let time = 5;
@@ -51,4 +52,20 @@ form.addEventListener("submit", function (event) {
   storedInitials.push(storedInitialsValue);
   form.value = "";
   storedCount.push(storedCountValue);
+  displayResult();
+  saveScores();
 });
+
+function displayResult() {
+  for (let i = 0; i < storedInitials.length; i++) {
+    const initials = storedInitials[i];
+    const count = storedCount[i];
+    result.innerHTML = `<div>${initials} - ${count}</div>`;
+  }
+}
+function saveScores() {
+  localStorage.setItem("initials", JSON.stringify(storedInitials));
+  localStorage.setItem("count", JSON.stringify(storedCount));
+}
+init();
+displayResult;
