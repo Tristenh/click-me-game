@@ -57,10 +57,14 @@ form.addEventListener("submit", function (event) {
 });
 
 function displayResult() {
+  result.innerHTML = ""; // Clear the previous content
+
   for (let i = 0; i < storedInitials.length; i++) {
     const initials = storedInitials[i];
     const count = storedCount[i];
-    result.innerHTML = `<div>${initials} - ${count}</div>`;
+    const scoreElement = document.createElement("div");
+    scoreElement.textContent = `${initials} - ${count}`;
+    result.appendChild(scoreElement);
   }
 }
 function saveScores() {
