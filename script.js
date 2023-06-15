@@ -29,3 +29,17 @@ start.addEventListener("click", function () {
     }
   }, 1000);
 });
+
+let storedInitials = [];
+let storedCount = [];
+
+function init() {
+  let storedInitialsJSON = JSON.parse(localStorage.getItem("storedInitials"));
+  if (storedInitialsJSON) {
+    storedInitials.JSON.parse(storedInitialsJSON);
+  }
+  let storedCountJSON = JSON.parse(localStorage.getItem("storedCount"));
+  if (storedCountJSON) {
+    storedCount.JSON.parse(localStorage(storedCountJSON));
+  }
+}
