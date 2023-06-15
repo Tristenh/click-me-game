@@ -40,6 +40,15 @@ function init() {
   }
   let storedCountJSON = JSON.parse(localStorage.getItem("storedCount"));
   if (storedCountJSON) {
-    storedCount.JSON.parse(localStorage(storedCountJSON));
+    storedCount.JSON.parse(storedCountJSON);
   }
 }
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  let storedInitialsValue = input.value;
+  let storedCountValue = count;
+  storedInitials.push(storedInitialsValue);
+  form.value = "";
+  storedCount.push(storedCountValue);
+});
