@@ -5,6 +5,7 @@ const input = document.getElementById("input");
 const submit = document.getElementById("submit");
 const score = document.getElementById("score");
 const result = document.getElementById("result");
+const reset = document.getElementById("reset");
 
 let count = 0;
 let time = 5;
@@ -43,6 +44,14 @@ function init() {
   if (storedCountJSON) {
     storedCount = JSON.parse(storedCountJSON);
   }
+}
+
+reset.addEventListener("click", resetScores);
+function resetScores() {
+  storedInitials = [];
+  storedCount = [];
+  displayResult();
+  saveScores();
 }
 
 form.addEventListener("submit", function (event) {
