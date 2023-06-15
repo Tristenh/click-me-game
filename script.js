@@ -35,13 +35,13 @@ let storedInitials = [];
 let storedCount = [];
 
 function init() {
-  let storedInitialsJSON = JSON.parse(localStorage.getItem("storedInitials"));
+  let storedInitialsJSON = localStorage.getItem("storedInitials");
   if (storedInitialsJSON) {
-    storedInitials.JSON.parse(storedInitialsJSON);
+    storedInitials = JSON.parse(storedInitialsJSON);
   }
-  let storedCountJSON = JSON.parse(localStorage.getItem("storedCount"));
+  let storedCountJSON = localStorage.getItem("storedCount");
   if (storedCountJSON) {
-    storedCount.JSON.parse(storedCountJSON);
+    storedCount = JSON.parse(storedCountJSON);
   }
 }
 
@@ -64,8 +64,8 @@ function displayResult() {
   }
 }
 function saveScores() {
-  localStorage.setItem("initials", JSON.stringify(storedInitials));
-  localStorage.setItem("count", JSON.stringify(storedCount));
+  localStorage.setItem("storedInitials", JSON.stringify(storedInitials));
+  localStorage.setItem("storedCount", JSON.stringify(storedCount));
 }
 init();
-displayResult;
+displayResult();
